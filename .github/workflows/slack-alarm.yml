@@ -1,0 +1,15 @@
+name: Mobinogi Scheduled Alarm
+
+on:
+  schedule:
+    - cron: '55 8,11,14,17,20,23 * * *'
+
+jobs:
+  send-message:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Slack Message
+        run: |
+          curl -X POST -H 'Content-type: application/json' \
+            --data '{"text":"!!!아맞다 결계!!!"} \
+            ${{ secrets.SLACK_WEBHOOK_URL }}
