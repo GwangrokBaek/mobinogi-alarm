@@ -12,5 +12,5 @@ jobs:
       - name: Send Slack Message
         run: |
           curl -X POST -H 'Content-type: application/json' \
-            --data '{"text":"!!!아맞다 결계!!!"}' \
+            --data '{"text":"@channel !!!아맞다 결계!!!", "link_names": 1}' \
             ${{ secrets.SLACK_WEBHOOK_URL }}
