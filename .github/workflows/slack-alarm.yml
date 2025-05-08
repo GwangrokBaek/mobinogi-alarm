@@ -3,6 +3,7 @@ name: Mobinogi Scheduled Alarm
 on:
   schedule:
     - cron: '55 8,11,14,17,20,23 * * *'
+  workflow_dispatch:
 
 jobs:
   send-message:
